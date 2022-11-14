@@ -22,14 +22,8 @@ class ExampleView extends HookWidget {
       if (!isReady) {
         return;
       }
-      if (Platform.isAndroid) {
-        const rotateIntervalInMs = 500;
-        timer = Timer.periodic(const Duration(milliseconds: rotateIntervalInMs),
-            (timer) {
-            print("This causes a problem:");
-            mapController.rotateMapCamera(50);
-        });
-      }
+      print("This causes a problem:");
+      mapController.rotateMapCamera(50);
     }
 
     useEffect(() {
