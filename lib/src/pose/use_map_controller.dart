@@ -21,13 +21,14 @@ class _MapControllerHookState
   late MapController _controller;
 
   @override
-  MapController build(BuildContext context) {
-    // final customTile = CustomTile(
-    //     urlsServers: [TileURLs(url: "https://tile.openstreetmap.org/")],
-    //     tileExtension: ".png",
-    //     sourceName: "osm");
+  void initHook() {
     _controller = MapController(initPosition: GeoPoint(latitude: 0.0, longitude: 0.0),
         initMapWithUserPosition: true);
+    super.initHook();
+  }
+
+  @override
+  MapController build(BuildContext context) {
     return _controller;
   }
 
